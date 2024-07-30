@@ -4,7 +4,9 @@ import math
 # Función para convertir de coordenadas polares a rectangulares
 def rectangular(polar):
     # Convertir las coordenadas polares (r, θ) a rectangulares (x, y)
-    rect = [polar[0] * math.cos(math.radians(polar[1])), polar[0] * math.sin(math.radians(polar[1]))]
+    vect1 = polar[0] * math.cos(math.radians(polar[1]))
+    vect2 = polar[0] * math.sin(math.radians(polar[1]))
+    rect = [vect1, vect2]
     return rect
 
 
@@ -44,7 +46,7 @@ def suma(polar1, polar2):
 
 # Función para multiplicar dos vectores en coordenadas polares
 def multiplicar(polar1, polar2):
-    modulo = polar1[0] *polar2[0]
+    modulo = polar1[0] * polar2[0]
     angulo = polar1[1] + polar2[1]
     multi = [modulo, angulo]
     return multi
@@ -53,3 +55,4 @@ def multiplicar(polar1, polar2):
 # Función para sumar tres vectores en coordenadas polares
 def suma_3n(polar1, polar2, polar3):
     return suma(suma(polar1, polar2), polar3)
+    
